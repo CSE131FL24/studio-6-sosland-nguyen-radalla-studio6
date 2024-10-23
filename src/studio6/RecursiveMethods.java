@@ -13,11 +13,12 @@ public class RecursiveMethods {
 	 */
 	public static double geometricSum(int n) {
 		
-			// FIXME compute the geometric sum for the first n terms recursively
+		if (n == 0) {
 			return 0;
 		
 	}
-	
+		return Math.pow(0.5, n) + geometricSum(n - 1);
+	}
 	/**
 	 * @param xCenter                       x-coordinate of the center of the circle
 	 *                                      at the current depth
@@ -30,6 +31,22 @@ public class RecursiveMethods {
 	public static void circlesUponCircles(double xCenter, double yCenter, double radius,
 			double radiusMinimumDrawingThreshold) {
 		
+		//
+		StdDraw.circle(xCenter, yCenter, radius);
+		
+		double newRadius = radius * (1.0/3);
+		
+		if(newRadius <=  radiusMinimumDrawingThreshold) {
+		}
+		
+		else { 
+			;
+			RecursiveMethods.circlesUponCircles(xCenter + radius, yCenter, newRadius, radiusMinimumDrawingThreshold);
+			RecursiveMethods.circlesUponCircles(xCenter - radius, yCenter,newRadius, radiusMinimumDrawingThreshold);
+			RecursiveMethods.circlesUponCircles(xCenter, yCenter + radius, newRadius, radiusMinimumDrawingThreshold);
+			RecursiveMethods.circlesUponCircles(xCenter, yCenter - radius, newRadius, radiusMinimumDrawingThreshold);
+			
+		}
 		// FIXME
 	}
 

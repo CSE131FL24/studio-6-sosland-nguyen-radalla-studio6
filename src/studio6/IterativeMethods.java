@@ -5,6 +5,9 @@ package studio6;
  */
 public class IterativeMethods {
 
+
+	
+	
 	/**
 	 * Computes the geometric sum for the first n terms in the series
 	 * 
